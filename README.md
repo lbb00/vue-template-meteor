@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/loveonelong/vue-element-meteor">
+  <a href="https://github.com/loveonelong/vue-template-meteor">
     <img src="https://travis-ci.org/loveonelong/vue-template-webpack.svg?branch=master" alt="travis">
   </a>
 </p>
