@@ -1,14 +1,19 @@
 <p style="text-align: center;">
-<img src="./src/svgIcons/svg/meteor.svg" style="height: 120px;width: 120px;">
+  <img src="./config/meteor.png">
 </p>
-# vue-template-meteor
+
+<p>
+  <a href="https://github.com/loveonelong/vue-element-meteor">
+    <img src="https://travis-ci.org/loveonelong/vue-template-webpack.svg?branch=master" alt="travis">
+  </a>
+</p>
 
 > 快速开发，如同流星一样快速！
 >
 > 基于vue init webpack改造  [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
 >
 
-![](https://travis-ci.org/loveonelong/vue-template-webpack.svg?branch=master)
+
 
 ## 站在巨人的肩膀上
 
