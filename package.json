@@ -1,7 +1,7 @@
 {
-  "name": "vue-template",
+  "name": "vue-template-meteor",
   "version": "1.0.0",
-  "description": "vue-template-webpack",
+  "description": "vue-template-meteor",
   "author": "onelong <love@onelong.org>",
   "private": true,
   "scripts": {

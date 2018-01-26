@@ -5,18 +5,17 @@ import router from './router'
 import store from './store'
 import api from './api'
 
-// svg icon chunk
-(() => import(/* webpackChunkName: "svgIcon" */ './icons'))()
+import SvgIcon from './svgIcons/template/SvgIcon.vue'
 
-// import global components
-const BaseSvgIcon = () => import(/* webpackChunkName: "globalCompoents" */ './components/BaseSvgIcon')
+/* svg icon chunk */
+(() => import(/* webpackChunkName: "svgIcon" */ './svgIcons'))()
+
+/* register global component */
+Vue.component('svg-icon', SvgIcon)
 
 Vue.config.productionTip = false
 
 Vue.prototype.$api = api
-
-// register global components
-Vue.component('svg-icon', BaseSvgIcon)
 
 /* eslint-disable no-new */
 new Vue({

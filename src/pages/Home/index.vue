@@ -1,6 +1,6 @@
 <template>
   <div>
-    <svg-icon icon-name="test" />
+    <svg-icon icon-name="meteor" class="logo"/>
     <app-header />
     <router-link to="/404">404</router-link>
   </div>
@@ -27,5 +27,8 @@ export default{
 </script>
 
 <style lang='scss'>
-
+.logo{
+  width: 120px;
+  height: 120px;
+}
 </style>

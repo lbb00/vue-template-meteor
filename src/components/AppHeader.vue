@@ -1,5 +1,7 @@
 <template>
-  <h1>hello vue template</h1>
+  <header class="app-header">
+    <h1>vue template meteor</h1>
+  </header>
 </template>
 
 <script>
@@ -20,7 +22,10 @@ export default{
 </script>
 
 <style lang='scss'>
-h1 {
-  color: $red;
+.app-header {
+  margin-top: 30px;
+  h1 {
+    color: $logo-color;
+  }
 }
 </style>
