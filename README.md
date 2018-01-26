@@ -1,8 +1,8 @@
-<p style="text-align: center;">
-  <img src="./config/meteor.png">
+<p align="center">
+  <img width="360px" src="./config/meteor.png">
 </p>
 
-<p>
+<p align="center">
   <a href="https://github.com/loveonelong/vue-element-meteor">
     <img src="https://travis-ci.org/loveonelong/vue-template-webpack.svg?branch=master" alt="travis">
   </a>
