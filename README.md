@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/loveonelong/vue-template-meteor">
-    <img src="https://travis-ci.org/loveonelong/vue-template-webpack.svg?branch=master" alt="travis">
+    <img src="https://travis-ci.org/loveonelong/vue-template-meteor.svg?branch=master" alt="travis">
   </a>
 </p>
 
