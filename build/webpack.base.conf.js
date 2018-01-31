@@ -48,7 +48,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.svg$/,
@@ -57,11 +57,11 @@ module.exports = {
         options: {
           symbolId: 'icon-[name]'
         }
-      },
+      },      
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
-        exclude: [resolve('src/svgIcons/svg')],
+        exclude: [resolve('src/svgIcons/svg')], // add exclude
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')

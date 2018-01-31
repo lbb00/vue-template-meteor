@@ -5,13 +5,39 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
 
 exports.assetsPath = function (_path) {
-  const assetsSubDirectory = process.env.NODE_ENV === 'production' ?
-    config.build.assetsSubDirectory :
-    config.dev.assetsSubDirectory
+  const assetsSubDirectory = process.env.NODE_ENV === 'production'
+    ? config.build.assetsSubDirectory
+    : config.dev.assetsSubDirectory
 
   return path.posix.join(assetsSubDirectory, _path)
 }
 
+function resolveResouce(name) { // 用于配置全局引入的sass的目录
+	return path.resolve(__dirname, '../src/style/' + name);
+}
+
+function generateSassResourceLoader() {
+	var loaders = [
+		cssLoader,
+		// 'postcss-loader',
+		'sass-loader',
+		{
+			loader: 'sass-resources-loader',
+			options: {
+				// 	这里是希望全局引入的具体的sass文件,可以自行指定
+				resources: [resolveResouce('vars.scss'), resolveResouce('mixins.scss')]
+			}
+		}
+	];
+	if (options.extract) {
+		return ExtractTextPlugin.extract({
+			use: loaders,
+			fallback: 'vue-style-loader'
+		})
+	} else {
+		return ['vue-style-loader'].concat(loaders)
+	}
+}
 exports.cssLoaders = function (options) {
   options = options || {}
 
@@ -30,7 +56,7 @@ exports.cssLoaders = function (options) {
   }
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders(loader, loaderOptions) {
+  function generateLoaders (loader, loaderOptions) {
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
     if (loader) {
@@ -53,11 +79,12 @@ exports.cssLoaders = function (options) {
       return ['vue-style-loader'].concat(loaders)
     }
   }
-  // 添加如下代码
-  function resolveResouce(name) { // 用于配置全局引入的sass的目录
+
+  // import sass/scss
+  function resolveStyle(name) { // 用于配置全局引入的sass的目录
     return path.resolve(__dirname, '../src/style/' + name);
   }
-
+  
   function generateSassResourceLoader() {
     var loaders = [
       cssLoader,
@@ -67,7 +94,7 @@ exports.cssLoaders = function (options) {
         loader: 'sass-resources-loader',
         options: {
           // 	这里是希望全局引入的具体的sass文件,可以自行指定
-          resources: [resolveResouce('vars.scss'), resolveResouce('mixins.scss')]
+          resources: [resolveStyle('vars.scss'), resolveStyle('mixins.scss')]
         }
       }
     ];

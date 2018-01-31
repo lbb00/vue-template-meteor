@@ -10,8 +10,9 @@
 
 > 快速开发，如同流星一样快速！
 >
-> 基于vue init webpack改造  [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
+> 基于`vue init webpack`改造  [https://github.com/vuejs-templates/webpack](https://github.com/vuejs-templates/webpack)
 >
+> 当前对应版本v1.3.1
 
 
 
@@ -29,6 +30,7 @@
 - sass
 - svg-sprite
 - axios
+- eslint-standard
 
 ## 该模板做的一些准备
 
@@ -37,6 +39,11 @@
 - 使用sass预处理器，全局变量等设置到config/*.scss中，使用时不用再@import引入
 - 预设组件icon-svg，支持SVGSprite，将所需要用到的svg放到src/icons/svg目录下即可
 - 优化vender，vue/vue-router/axios/vuex使用bootCDN(你可以替换为别的)
+
+## 未来
+
+* vue-meta
+* vue-i18n
 
 ## Usage
 
@@ -63,13 +70,13 @@ npm run build --report
 ## src下的目录划分
 
 ```
-- api                经过封装的api接口
+- api                api module
 - assets             一些静态资源
 - components         组件
 - svgIcons           svg icons
-- style              开发时用到的配置（cssreset/cdn...）
-- pages              页面（每个页面一个单独的目录，页面之间的层级关系以此体现，私有组件平铺在该页面下）
-- router             vue-router
+- style              全局样式
+- pages              页面（每个页面一个单独的目录，页面之间的层级关系以此体现，私有组件平铺在该目录下）
+- router             router
 - store              vuex
 - utils              工具类
 * App.vue
@@ -125,7 +132,7 @@ sass-resources-loader 将指定sass文件全局注入，在别的sass样式中�
 配置方法：
 
 ```javascript
-/* 找到build目录下的utils.js 添加如下修改 */
+/* 找到build目录下的 utils.js 在exports.cssLoaders = function (options){}中添加如下修改 */
 
 /* step 1 添加如下代码 */
 function resolveResouce(name) { // 用于配置全局引入的sass的目录
